@@ -123,7 +123,7 @@ const Footer = () => {
               <motion.li whileHover="hover" variants={linkVariants}>
                 <a href="#" className="flex items-start text-blue-200 hover:text-white transition-colors">
                   <FaMapMarkerAlt className="mt-1 mr-3 text-red-400" />
-                  <span>Dattanager Shivanjil lane no 2, Katraj, Pune - 411046</span>
+                  <span>Dattanager Shivanjali lane no 2, Katraj, Pune - 411046</span>
                 </a>
               </motion.li>
               <motion.li whileHover="hover" variants={linkVariants}>

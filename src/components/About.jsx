@@ -64,7 +64,7 @@ const About = () => {
             <div className="bg-blue-50 p-4 sm:p-6 rounded-xl border-l-4 border-red-500 mb-5 md:mb-7">
   <div className="flex items-start mb-2 sm:mb-3">
     <FaMapMarkerAlt className="text-red-500 text-lg sm:text-xl mt-0.5 mr-2 sm:mr-3" />
-    <p className="text-sm sm:text-base text-black">Dattanager Shivanjil lane no 2 katraj pune - 411046</p>
+    <p className="text-sm sm:text-base text-black">Dattanager Shivanjali lane no 2 katraj pune - 411046</p>
   </div>
   <div className="flex items-start mb-2 sm:mb-3">
     <FaEnvelope className="text-red-500 text-lg sm:text-xl mt-0.5 mr-2 sm:mr-3" />
