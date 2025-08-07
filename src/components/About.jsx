@@ -1,7 +1,7 @@
 // src/components/About.js
 'use client';
 import React, { useState, useEffect } from 'react';
-import { FaMapMarkerAlt, FaEnvelope, FaPhone, FaCog, FaIndustry, FaMedal } from 'react-icons/fa';
+import { FaMapMarkerAlt, FaEnvelope, FaPhone, FaCog, FaIndustry, FaMedal,FaFileAlt } from 'react-icons/fa';
 
 const About = () => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
@@ -62,23 +62,23 @@ const About = () => {
             </p>
             
             <div className="bg-blue-50 p-4 sm:p-6 rounded-xl border-l-4 border-red-500 mb-5 md:mb-7">
-              <div className="flex items-start mb-2 sm:mb-3">
-                <FaMapMarkerAlt className="text-red-500 text-lg sm:text-xl mt-0.5 mr-2 sm:mr-3" />
-                <p className="text-sm sm:text-base">Dattanager Shivanjil lane no 2 katraj pune - 411046</p>
-              </div>
-              <div className="flex items-start mb-2 sm:mb-3">
-                <FaEnvelope className="text-red-500 text-lg sm:text-xl mt-0.5 mr-2 sm:mr-3" />
-                <p className="text-sm sm:text-base">couplingwork.stech@yahoo.com</p>
-              </div>
-              <div className="flex items-start mb-2 sm:mb-3">
-                <FaPhone className="text-red-500 text-lg sm:text-xl mt-0.5 mr-2 sm:mr-3" />
-                <p className="text-sm sm:text-base">+91 8208269162, +91 9422302342</p>
-              </div>
-              <div className="flex items-start">
-                <span className="text-red-500 text-lg sm:text-xl mt-0.5 mr-2 sm:mr-3">📋</span>
-                <p className="text-sm sm:text-base">GST No: 27BPDPJ5776D1ZS</p>
-              </div>
-            </div>
+  <div className="flex items-start mb-2 sm:mb-3">
+    <FaMapMarkerAlt className="text-red-500 text-lg sm:text-xl mt-0.5 mr-2 sm:mr-3" />
+    <p className="text-sm sm:text-base">Dattanager Shivanjil lane no 2 katraj pune - 411046</p>
+  </div>
+  <div className="flex items-start mb-2 sm:mb-3">
+    <FaEnvelope className="text-red-500 text-lg sm:text-xl mt-0.5 mr-2 sm:mr-3" />
+    <p className="text-sm sm:text-base">couplingwork.stech@yahoo.com</p>
+  </div>
+  <div className="flex items-start mb-2 sm:mb-3">
+    <FaPhone className="text-red-500 text-lg sm:text-xl mt-0.5 mr-2 sm:mr-3" />
+    <p className="text-sm sm:text-base">+91 8208269162, +91 9422302342</p>
+  </div>
+  <div className="flex items-start">
+    <FaFileAlt className="text-red-500 text-lg sm:text-xl mt-0.5 mr-2 sm:mr-3" />
+    <p className="text-sm sm:text-base">GST No: 27BPDPJ5776D1ZS</p>
+  </div>
+</div>
             
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-3">  {/* Reduced gap-3 sm:gap-4 */}
               <div className="flex items-center">
