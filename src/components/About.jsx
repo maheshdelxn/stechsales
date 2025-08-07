@@ -64,19 +64,19 @@ const About = () => {
             <div className="bg-blue-50 p-4 sm:p-6 rounded-xl border-l-4 border-red-500 mb-5 md:mb-7">
   <div className="flex items-start mb-2 sm:mb-3">
     <FaMapMarkerAlt className="text-red-500 text-lg sm:text-xl mt-0.5 mr-2 sm:mr-3" />
-    <p className="text-sm sm:text-base">Dattanager Shivanjil lane no 2 katraj pune - 411046</p>
+    <p className="text-sm sm:text-base text-black">Dattanager Shivanjil lane no 2 katraj pune - 411046</p>
   </div>
   <div className="flex items-start mb-2 sm:mb-3">
     <FaEnvelope className="text-red-500 text-lg sm:text-xl mt-0.5 mr-2 sm:mr-3" />
-    <p className="text-sm sm:text-base">couplingwork.stech@yahoo.com</p>
+    <p className="text-sm sm:text-base text-black">couplingwork.stech@yahoo.com</p>
   </div>
   <div className="flex items-start mb-2 sm:mb-3">
     <FaPhone className="text-red-500 text-lg sm:text-xl mt-0.5 mr-2 sm:mr-3" />
-    <p className="text-sm sm:text-base">+91 8208269162, +91 9422302342</p>
+    <p className="text-sm sm:text-base text-black">+91 8208269162, +91 9422302342</p>
   </div>
   <div className="flex items-start">
     <FaFileAlt className="text-red-500 text-lg sm:text-xl mt-0.5 mr-2 sm:mr-3" />
-    <p className="text-sm sm:text-base">GST IN: 27BPDPJ5776D1ZS</p>
+    <p className="text-sm sm:text-base text-black">GST IN: 27BPDPJ5776D1ZS</p>
   </div>
 </div>
             
@@ -85,19 +85,19 @@ const About = () => {
                 <div className="bg-blue-100 p-2 sm:p-3 rounded-full mr-2 sm:mr-3">  {/* Reduced mr-3 sm:mr-4 */}
                   <FaCog className="text-blue-700 text-lg sm:text-xl" />
                 </div>
-                <p className="font-medium text-sm sm:text-base">Precision Engineering</p>
+                <p className="font-medium text-sm sm:text-base text-black">Precision Engineering</p>
               </div>
               <div className="flex items-center">
                 <div className="bg-blue-100 p-2 sm:p-3 rounded-full mr-2 sm:mr-3">  {/* Reduced mr-3 sm:mr-4 */}
                   <FaIndustry className="text-blue-700 text-lg sm:text-xl" />
                 </div>
-                <p className="font-medium text-sm sm:text-base">Quality Solutions</p>
+                <p className="font-medium text-sm sm:text-base text-black">Quality Solutions</p>
               </div>
               <div className="flex items-center">
                 <div className="bg-blue-100 p-2 sm:p-3 rounded-full mr-2 sm:mr-3">  {/* Reduced mr-3 sm:mr-4 */}
                   <FaMedal className="text-blue-700 text-lg sm:text-xl" />
                 </div>
-                <p className="font-medium text-sm sm:text-base">Industry Expertise</p>
+                <p className="font-medium text-sm sm:text-base text-black ">Industry Expertise</p>
               </div>
             </div>
           </div>
