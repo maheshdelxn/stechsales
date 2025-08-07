@@ -76,7 +76,7 @@ const About = () => {
   </div>
   <div className="flex items-start">
     <FaFileAlt className="text-red-500 text-lg sm:text-xl mt-0.5 mr-2 sm:mr-3" />
-    <p className="text-sm sm:text-base">GST No: 27BPDPJ5776D1ZS</p>
+    <p className="text-sm sm:text-base">GST IN: 27BPDPJ5776D1ZS</p>
   </div>
 </div>
             

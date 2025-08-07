@@ -15,9 +15,12 @@ const Clients = () => {
   return (
     <section className="py-16 bg-gray-50" id="clients">
       <div className="container mx-auto px-4">
-        <h2 className="text-3xl font-bold text-center text-gray-800 mb-12">
-          Our Clients
-        </h2>
+        <div className="text-center mb-12">
+          <h2 className="text-3xl font-bold text-gray-800">
+            Our Clients
+          </h2>
+          <div className="w-16 md:w-20 h-1 bg-red-500 mx-auto mt-4 mb-4 md:mb-6"></div>
+        </div>
         
         {/* Desktop View - Grid Layout */}
         <div className="hidden md:flex justify-center items-center">

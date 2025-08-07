@@ -8,7 +8,7 @@ import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 
 // Animation variants
-const headerVariants = {  // Fixed the variable name (was headerVariants)
+const headerVariants = {
   scrolled: {
     backgroundColor: 'rgba(12, 35, 64, 0.95)',
     backdropFilter: 'blur(10px)',
@@ -24,18 +24,36 @@ const headerVariants = {  // Fixed the variable name (was headerVariants)
 const mobileMenuVariants = {
   open: {
     opacity: 1,
-    height: 'auto',
+    y: 0,
     transition: {
-      duration: 0.3,
-      ease: [0.04, 0.62, 0.23, 0.98]
+      type: "spring",
+      bounce: 0.1,
+      duration: 0.5
     }
   },
   closed: {
     opacity: 0,
-    height: 0,
+    y: -20,
     transition: {
-      duration: 0.2,
-      ease: [0.04, 0.62, 0.23, 0.98]
+      duration: 0.3,
+      ease: "easeIn"
+    }
+  }
+};
+
+const menuItemVariants = {
+  open: {
+    y: 0,
+    opacity: 1,
+    transition: {
+      y: { stiffness: 1000, velocity: -100 }
+    }
+  },
+  closed: {
+    y: 50,
+    opacity: 0,
+    transition: {
+      y: { stiffness: 1000 }
     }
   }
 };
@@ -48,7 +66,7 @@ const Header = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY > 10);  // Fixed typo (was setScrolled)
+      setScrolled(window.scrollY > 10);
     };
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
@@ -66,10 +84,9 @@ const Header = () => {
     <motion.header
       initial="normal"
       animate={scrolled ? "scrolled" : "normal"}
-      variants={headerVariants}  // Fixed to match variable name
+      variants={headerVariants}
       className="fixed w-full z-50 text-white"
     >
-      {/* Rest of your component remains the same */}
       <div className="container mx-auto px-4 py-3 flex justify-between items-center">
         <ScrollLink 
           to="home" 
@@ -163,56 +180,91 @@ const Header = () => {
         {/* Mobile Navigation */}
         <AnimatePresence>
           {mobileMenuOpen && (
-            <motion.div
-              initial="closed"
-              animate="open"
-              exit="closed"
-              variants={mobileMenuVariants}
-              className="md:hidden overflow-hidden bg-blue-800/95 backdrop-blur-sm"
-            >
-              <nav>
-                <ul className="container mx-auto px-4 py-2 space-y-1">
-                  {navItems.map((item) => (
-                    <li key={item.name}>
-                      {item.isPage ? (
-                        <Link
-                          href={item.href}
-                          className={`block py-3 px-4 font-medium rounded-lg transition-colors duration-300 w-full text-left
-                            ${activeLink === item.href 
-                              ? 'text-red-400 bg-blue-700/50' 
-                              : 'text-white hover:text-red-300 hover:bg-blue-700/30'}`}
-                          onClick={() => {
-                            setMobileMenuOpen(false);
-                            setActiveLink(item.href);
-                          }}
-                        >
-                          {item.name}
-                        </Link>
-                      ) : (
-                        <ScrollLink
-                          to={item.href}
-                          smooth={true}
-                          duration={500}
-                          offset={-80}
-                          className={`block py-3 px-4 font-medium rounded-lg transition-colors duration-300
-                            ${activeLink === item.href 
-                              ? 'text-red-400 bg-blue-700/50' 
-                              : 'text-white hover:text-red-300 hover:bg-blue-700/30'}`}
-                          onClick={() => {
-                            setMobileMenuOpen(false);
-                            setActiveLink(item.href);
-                          }}
-                          onSetActive={() => setActiveLink(item.href)}
-                          spy={true}
-                        >
-                          {item.name}
-                        </ScrollLink>
-                      )}
-                    </li>
-                  ))}
-                </ul>
-              </nav>
-            </motion.div>
+            <>
+              {/* Overlay */}
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 0.5 }}
+                exit={{ opacity: 0 }}
+                className="fixed inset-0 bg-black z-40 md:hidden"
+                onClick={() => setMobileMenuOpen(false)}
+              />
+              
+              {/* Mobile Menu */}
+              <motion.div
+                initial="closed"
+                animate="open"
+                exit="closed"
+                variants={mobileMenuVariants}
+                className="md:hidden fixed left-0 top-16 w-full h-[calc(100vh-4rem)] bg-blue-950 bg-gradient-to-b from-blue-900/95 to-blue-800/95 backdrop-blur-md z-50 overflow-y-auto"
+              >
+                <motion.nav
+                  initial="closed"
+                  animate="open"
+                  exit="closed"
+                  className="container mx-auto px-4 py-6"
+                >
+                  <motion.ul className="space-y-4">
+                    {navItems.map((item, index) => (
+                      <motion.li
+                        key={item.name}
+                        variants={menuItemVariants}
+                        custom={index}
+                        whileHover={{ scale: 1.02 }}
+                        whileTap={{ scale: 0.98 }}
+                      >
+                        {item.isPage ? (
+                          <Link
+                            href={item.href}
+                            className={`flex items-center px-4 py-3 rounded-xl font-medium transition-all duration-300
+                              ${activeLink === item.href 
+                                ? 'text-red-400 bg-blue-700/50 shadow-lg' 
+                                : 'text-white hover:text-red-300 hover:bg-blue-700/30'}`}
+                            onClick={() => {
+                              setMobileMenuOpen(false);
+                              setActiveLink(item.href);
+                            }}
+                          >
+                            <span className="flex-1">{item.name}</span>
+                            {activeLink === item.href && (
+                              <motion.span 
+                                className="w-2 h-2 bg-red-400 rounded-full"
+                                layoutId="mobileNavIndicator"
+                              />
+                            )}
+                          </Link>
+                        ) : (
+                          <ScrollLink
+                            to={item.href}
+                            smooth={true}
+                            duration={500}
+                            offset={-80}
+                            className={`flex items-center px-4 py-3 rounded-xl font-medium transition-all duration-300
+                              ${activeLink === item.href 
+                                ? 'text-red-400 bg-blue-700/50 shadow-lg' 
+                                : 'text-white hover:text-red-300 hover:bg-blue-700/30'}`}
+                            onClick={() => {
+                              setMobileMenuOpen(false);
+                              setActiveLink(item.href);
+                            }}
+                            onSetActive={() => setActiveLink(item.href)}
+                            spy={true}
+                          >
+                            <span className="flex-1">{item.name}</span>
+                            {activeLink === item.href && (
+                              <motion.span 
+                                className="w-2 h-2 bg-red-400 rounded-full"
+                                layoutId="mobileNavIndicator"
+                              />
+                            )}
+                          </ScrollLink>
+                        )}
+                      </motion.li>
+                    ))}
+                  </motion.ul>
+                </motion.nav>
+              </motion.div>
+            </>
           )}
         </AnimatePresence>
       </div>
