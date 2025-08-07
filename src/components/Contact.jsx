@@ -188,7 +188,7 @@ const Contact = () => {
                   <FaMapMarkerAlt className="text-xl mt-1 mr-4 text-red-400" />
                   <div>
                     <h3 className="text-xl font-bold mb-2">Our Location</h3>
-                    <p>Dattanager Shivanjil lane no 2</p>
+                    <p>Dattanager Shivanjali lane no 2</p>
                     <p>Katraj, Pune - 411046</p>
                     <p>Maharashtra, India</p>
                   </div>
