@@ -127,7 +127,7 @@ const Footer = () => {
                 </a>
               </motion.li>
               <motion.li whileHover="hover" variants={linkVariants}>
-                <a href="mailto:couplingwork.stech@yahoo.com" className="flex items-center text-blue-200 hover:text-white transition-colors">
+                <a href="mailto:info@stechsales.com" className="flex items-center text-blue-200 hover:text-white transition-colors">
                   <FaEnvelope className="mr-3 text-red-400" /> info@stechsales.com
                 </a>
               </motion.li>
