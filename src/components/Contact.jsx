@@ -200,7 +200,7 @@ const Contact = () => {
                   <FaPhone className="text-xl mt-1 mr-4 text-red-400" />
                   <div>
                     <h3 className="text-xl font-bold mb-2">Contact Information</h3>
-                    <p className="flex items-center"><FaEnvelope className="mr-3" /> couplingwork.stech@yahoo.com</p>
+                    <p className="flex items-center"><FaEnvelope className="mr-3" /> info@stechsales.com</p>
                     <p className="flex items-center mt-2"><FaPhone className="mr-3" /> +91 8208269162</p>
                     <p className="flex items-center mt-2"><FaPhone className="mr-3" /> +91 9422302342</p>
                   </div>

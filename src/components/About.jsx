@@ -68,7 +68,7 @@ const About = () => {
   </div>
   <div className="flex items-start mb-2 sm:mb-3">
     <FaEnvelope className="text-red-500 text-lg sm:text-xl mt-0.5 mr-2 sm:mr-3" />
-    <p className="text-sm sm:text-base text-black">couplingwork.stech@yahoo.com</p>
+    <p className="text-sm sm:text-base text-black">info@stechsales.com</p>
   </div>
   <div className="flex items-start mb-2 sm:mb-3">
     <FaPhone className="text-red-500 text-lg sm:text-xl mt-0.5 mr-2 sm:mr-3" />
