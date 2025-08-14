@@ -1,4 +1,3 @@
-// src/app/api/send-email/route.js
 import nodemailer from 'nodemailer';
 
 export async function POST(req) {
@@ -26,11 +25,18 @@ export async function POST(req) {
       }, { status: 500 });
     }
 
+    // Create transporter with GoDaddy settings
     const transporter = nodemailer.createTransport({
-      service: 'gmail',
+      host: process.env.EMAIL_HOST || 'smtpout.secureserver.net',
+      port: parseInt(process.env.EMAIL_PORT) || 587,
+      secure: process.env.SECURE_CONNECTION === 'true',
       auth: {
         user: EMAIL_USERNAME,
         pass: EMAIL_PASSWORD
+      },
+      tls: {
+        ciphers: 'SSLv3',
+        rejectUnauthorized: false
       }
     });
 
@@ -41,7 +47,7 @@ export async function POST(req) {
     // Email to site owner
     await transporter.sendMail({
       from: `"Contact Form" <${EMAIL_USERNAME}>`,
-      to: 'maheshindalkar.delxn@gmail.com',
+      to: EMAIL_USERNAME, // Using the same email from env
       subject: `New ${subject} Inquiry - ${name}`,
       html: `
         <h2 style="color: #2563eb;">New ${subject} Inquiry</h2>
@@ -82,7 +88,7 @@ export async function POST(req) {
         
         <p style="margin-top: 2rem; color: #6b7280; border-top: 1px solid #e5e7eb; padding-top: 1rem;">
           Best regards,<br>
-          <strong style="color: #1e40af;">Our Team</strong>
+          <strong style="color: #1e40af;">Stech Sales Team</strong>
         </p>
       `
     });
