@@ -1,11 +1,11 @@
 // src/components/About.js
 'use client';
 import React, { useState, useEffect } from 'react';
-import { FaMapMarkerAlt, FaEnvelope, FaPhone, FaCog, FaIndustry, FaMedal,FaFileAlt } from 'react-icons/fa';
+import { FaMapMarkerAlt, FaEnvelope, FaPhone, FaCog, FaIndustry, FaMedal, FaFileAlt } from 'react-icons/fa';
 
 const About = () => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
-  
+
   // Array of image paths from public folder
   const images = [
     '/about1.jpeg',
@@ -23,7 +23,7 @@ const About = () => {
   // Auto-rotate images every 3 seconds
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentImageIndex((prevIndex) => 
+      setCurrentImageIndex((prevIndex) =>
         prevIndex === images.length - 1 ? 0 : prevIndex + 1
       );
     }, 3000);
@@ -40,16 +40,16 @@ const About = () => {
             With years of expertise in precision engineering, S-Tech Sales delivers high-quality coupling solutions for diverse industrial applications.
           </p>
         </div>
-        
+
         <div className="flex flex-col md:flex-row gap-6 md:gap-8 items-center">  {/* Reduced gap from gap-8 md:gap-12 */}
           <div className="w-full h-96 w-96 md:w-1/2 flex justify-center">
-            <img 
-              src={images[currentImageIndex]} 
+            <img
+              src={images[currentImageIndex]}
               alt="S-Tech Sales Facility"
               className="h-full rounded-xl"
             />
           </div>
-          
+
           <div className="w-full md:w-1/2">
             <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-blue-800 mb-3 md:mb-5">  {/* Reduced mb-4 md:mb-6 */}
               Your Reliable Partner in Industrial Solutions
@@ -60,26 +60,26 @@ const About = () => {
             <p className="text-gray-600 text-sm sm:text-base mb-5 md:mb-7">  {/* Reduced mb-6 md:mb-8 */}
               We pride ourselves on our technical expertise, quality products, and timely delivery. Our team of skilled engineers and technicians ensure that every product meets the highest standards of precision and durability.
             </p>
-            
+
             <div className="bg-blue-50 p-4 sm:p-6 rounded-xl border-l-4 border-red-500 mb-5 md:mb-7">
-  <div className="flex items-start mb-2 sm:mb-3">
-    <FaMapMarkerAlt className="text-red-500 text-lg sm:text-xl mt-0.5 mr-2 sm:mr-3" />
-    <p className="text-sm sm:text-base text-black">Dattanager Shivanjali lane no 2 katraj pune - 411046</p>
-  </div>
-  <div className="flex items-start mb-2 sm:mb-3">
-    <FaEnvelope className="text-red-500 text-lg sm:text-xl mt-0.5 mr-2 sm:mr-3" />
-    <p className="text-sm sm:text-base text-black">info@stechsales.com</p>
-  </div>
-  <div className="flex items-start mb-2 sm:mb-3">
-    <FaPhone className="text-red-500 text-lg sm:text-xl mt-0.5 mr-2 sm:mr-3" />
-    <p className="text-sm sm:text-base text-black">+91 8208269162, +91 9422302342</p>
-  </div>
-  <div className="flex items-start">
-    <FaFileAlt className="text-red-500 text-lg sm:text-xl mt-0.5 mr-2 sm:mr-3" />
-    <p className="text-sm sm:text-base text-black">GST IN: 27BPDPJ5776D1ZS</p>
-  </div>
-</div>
-            
+              <div className="flex items-start mb-2 sm:mb-3">
+                <FaMapMarkerAlt className="text-red-500 text-lg sm:text-xl mt-0.5 mr-2 sm:mr-3" />
+                <p className="text-sm sm:text-base text-black">Dattanager Shivanjali lane no 2 katraj pune - 411046</p>
+              </div>
+              <div className="flex items-start mb-2 sm:mb-3">
+                <FaEnvelope className="text-red-500 text-lg sm:text-xl mt-0.5 mr-2 sm:mr-3" />
+                <p className="text-sm sm:text-base text-black">info@stechsales.com</p>
+              </div>
+              <div className="flex items-start mb-2 sm:mb-3">
+                <FaPhone className="text-red-500 text-lg sm:text-xl mt-0.5 mr-2 sm:mr-3" />
+                <p className="text-sm sm:text-base text-black">+91 8208269162, +91 9422302342</p>
+              </div>
+              <div className="flex items-start">
+                <FaFileAlt className="text-red-500 text-lg sm:text-xl mt-0.5 mr-2 sm:mr-3" />
+                <p className="text-sm sm:text-base text-black">GST IN: 27BPDPJ5776D1ZS</p>
+              </div>
+            </div>
+
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-3">  {/* Reduced gap-3 sm:gap-4 */}
               <div className="flex items-center">
                 <div className="bg-blue-100 p-2 sm:p-3 rounded-full mr-2 sm:mr-3">  {/* Reduced mr-3 sm:mr-4 */}

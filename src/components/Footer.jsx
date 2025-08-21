@@ -26,13 +26,13 @@ const Footer = () => {
   const scrollToProduct = (id) => {
     const productsSection = document.getElementById('products');
     const productElement = document.getElementById(id);
-    
+
     if (productsSection && productElement) {
       window.scrollTo({
         top: productsSection.offsetTop - 100,
         behavior: 'smooth'
       });
-      
+
       setTimeout(() => {
         productElement.scrollIntoView({ behavior: 'smooth', block: 'center' });
         productElement.classList.add('ring-2', 'ring-red-500');
@@ -80,14 +80,14 @@ const Footer = () => {
               ))}
             </div>
           </div>
-          
+
           <div>
             <h3 className="text-lg font-bold mb-4 border-b border-blue-700 pb-2">Quick Links</h3>
             <ul className="space-y-2">
               {['Home', 'About Us', 'Products', 'Clients', 'Contact'].map((item, index) => (
                 <motion.li key={index} whileHover="hover" variants={linkVariants}>
-                  <a 
-                    href={`#${item.toLowerCase().replace(' ', '-')}`} 
+                  <a
+                    href={`#${item.toLowerCase().replace(' ', '-')}`}
                     className="flex items-center text-blue-200 hover:text-white transition-colors"
                     onClick={(e) => {
                       e.preventDefault();
@@ -100,13 +100,13 @@ const Footer = () => {
               ))}
             </ul>
           </div>
-          
+
           <div>
             <h3 className="text-lg font-bold mb-4 border-b border-blue-700 pb-2">Our Products</h3>
             <ul className="space-y-2">
               {products.map((product, index) => (
                 <motion.li key={index} whileHover="hover" variants={linkVariants}>
-                  <button 
+                  <button
                     onClick={() => scrollToProduct(product.id)}
                     className="flex items-center w-full text-left text-blue-200 hover:text-white transition-colors"
                   >
@@ -116,7 +116,7 @@ const Footer = () => {
               ))}
             </ul>
           </div>
-          
+
           <div>
             <h3 className="text-lg font-bold mb-4 border-b border-blue-700 pb-2">Contact Us</h3>
             <ul className="space-y-3">
@@ -144,7 +144,7 @@ const Footer = () => {
             </ul>
           </div>
         </div>
-        
+
         <div className="border-t border-blue-800 pt-8 text-center">
           <p className="text-blue-300">
             &copy; {new Date().getFullYear()} S-Tech Sales. All Rights Reserved. | Designed with Precision

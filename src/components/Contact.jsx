@@ -43,9 +43,9 @@ const Contact = () => {
         throw new Error(data.message || 'Server responded with an error');
       }
 
-      setSubmitStatus({ 
-        success: true, 
-        message: data.message || 'Message sent successfully!' 
+      setSubmitStatus({
+        success: true,
+        message: data.message || 'Message sent successfully!'
       });
       setFormData({
         name: '',
@@ -56,9 +56,9 @@ const Contact = () => {
       });
     } catch (error) {
       console.error('Submission error:', error);
-      setSubmitStatus({ 
-        success: false, 
-        message: error.message || 'Failed to send message. Please try again.' 
+      setSubmitStatus({
+        success: false,
+        message: error.message || 'Failed to send message. Please try again.'
       });
     } finally {
       setIsSubmitting(false);
@@ -75,30 +75,29 @@ const Contact = () => {
             Reach out to us for inquiries, quotes, or technical support
           </p>
         </div>
-        
+
         <div className="flex flex-col lg:flex-row gap-10">
           <div className="lg:w-1/2">
             <form onSubmit={handleSubmit} className="bg-blue-50 p-8 rounded-xl">
               <h3 className="text-xl font-bold text-blue-900 mb-6">Send us a message</h3>
-              
+
               {submitStatus && (
-                <div className={`mb-5 p-4 rounded-lg ${
-                  submitStatus.success 
-                    ? 'bg-green-100 text-green-800' 
+                <div className={`mb-5 p-4 rounded-lg ${submitStatus.success
+                    ? 'bg-green-100 text-green-800'
                     : 'bg-red-100 text-red-800'
-                }`}>
+                  }`}>
                   {submitStatus.message}
                   {!submitStatus.success && (
                     <p className="mt-2 text-sm">Check console for more details</p>
                   )}
                 </div>
               )}
-              
+
               <div className="mb-5">
                 <label htmlFor="name" className="block text-gray-700 mb-2">Name *</label>
-                <input 
-                  type="text" 
-                  id="name" 
+                <input
+                  type="text"
+                  id="name"
                   value={formData.name}
                   onChange={handleChange}
                   className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 text-black"
@@ -106,12 +105,12 @@ const Contact = () => {
                   required
                 />
               </div>
-              
+
               <div className="mb-5">
                 <label htmlFor="email" className="block text-gray-700 mb-2">Email *</label>
-                <input 
-                  type="email" 
-                  id="email" 
+                <input
+                  type="email"
+                  id="email"
                   value={formData.email}
                   onChange={handleChange}
                   className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 text-black"
@@ -119,12 +118,12 @@ const Contact = () => {
                   required
                 />
               </div>
-              
+
               <div className="mb-5">
                 <label htmlFor="phone" className="block text-gray-700 mb-2">Phone *</label>
-                <input 
-                  type="tel" 
-                  id="phone" 
+                <input
+                  type="tel"
+                  id="phone"
                   value={formData.phone}
                   onChange={handleChange}
                   className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 text-black"
@@ -149,12 +148,12 @@ const Contact = () => {
                   <option value="Other">Other</option>
                 </select>
               </div>
-              
+
               <div className="mb-5">
                 <label htmlFor="message" className="block text-gray-700 mb-2">Message *</label>
-                <textarea 
-                  id="message" 
-                  rows="5" 
+                <textarea
+                  id="message"
+                  rows="5"
                   value={formData.message}
                   onChange={handleChange}
                   className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 text-black"
@@ -162,9 +161,9 @@ const Contact = () => {
                   required
                 ></textarea>
               </div>
-              
-              <button 
-                type="submit" 
+
+              <button
+                type="submit"
                 className="w-full bg-red-500 hover:bg-red-600 text-white font-bold py-3 px-6 rounded-lg transition duration-300 disabled:opacity-50"
                 disabled={isSubmitting}
               >
@@ -180,7 +179,7 @@ const Contact = () => {
               </button>
             </form>
           </div>
-          
+
           <div className="lg:w-1/2">
             <div className="space-y-6">
               <div className="bg-gradient-to-r from-blue-800 to-blue-600 text-white p-6 rounded-xl">
@@ -194,7 +193,7 @@ const Contact = () => {
                   </div>
                 </div>
               </div>
-              
+
               <div className="bg-gradient-to-r from-blue-800 to-blue-600 text-white p-6 rounded-xl">
                 <div className="flex items-start mb-4">
                   <FaPhone className="text-xl mt-1 mr-4 text-red-400" />
@@ -206,7 +205,7 @@ const Contact = () => {
                   </div>
                 </div>
               </div>
-              
+
               <div className="bg-gradient-to-r from-blue-800 to-blue-600 text-white p-6 rounded-xl">
                 <div className="flex items-start">
                   <FaClock className="text-xl mt-1 mr-4 text-red-400" />

@@ -21,7 +21,7 @@ const Clients = () => {
           </h2>
           <div className="w-16 md:w-20 h-1 bg-red-500 mx-auto mt-4 mb-4 md:mb-6"></div>
         </div>
-        
+
         {/* Desktop View - Grid Layout */}
         <div className="hidden md:flex justify-center items-center">
           <div className="grid grid-cols-4 gap-8 lg:gap-16 w-full max-w-5xl mx-auto">
