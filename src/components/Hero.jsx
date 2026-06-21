@@ -55,18 +55,27 @@ const Hero = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6 drop-shadow-md"
+            className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-4 drop-shadow-md"
           >
             Precision Coupling Solutions for Industrial Excellence
           </motion.h1>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            className="mb-6 inline-block bg-orange-500 text-white font-bold px-4 py-1 rounded-full text-sm tracking-wider uppercase drop-shadow-md"
+          >
+            Authorized Dealer for KTR Coupling (India) Pvt. Ltd.
+          </motion.div>
           
           <motion.p 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-lg md:text-xl text-white mb-8 max-w-2xl drop-shadow-md"
+            className="text-lg md:text-xl text-white mb-8 max-w-2xl drop-shadow-md font-medium"
           >
-            Your trusted partner for industrial couplings, precision components, and engineering solutions
+            ISO 9001:2015 Certified • 100% Genuine Products • Premium Quality
           </motion.p>
           
           <motion.div 
@@ -76,7 +85,7 @@ const Hero = () => {
             className="flex flex-wrap gap-4"
           >
             <motion.button 
-              className="flex items-center bg-red-500 hover:bg-red-600 text-white font-bold py-3 px-6 rounded-full transition duration-300"
+              className="flex items-center bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-6 rounded-full transition duration-300"
               variants={buttonVariants}
               whileHover="hover"
               whileTap="tap"

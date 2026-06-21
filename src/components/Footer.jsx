@@ -35,9 +35,9 @@ const Footer = () => {
 
       setTimeout(() => {
         productElement.scrollIntoView({ behavior: 'smooth', block: 'center' });
-        productElement.classList.add('ring-2', 'ring-red-500');
+        productElement.classList.add('ring-2', 'ring-orange-500');
         setTimeout(() => {
-          productElement.classList.remove('ring-2', 'ring-red-500');
+          productElement.classList.remove('ring-2', 'ring-orange-500');
         }, 2000);
       }, 500);
     }
@@ -59,8 +59,8 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
           <div>
             <div className="flex items-center mb-4">
-              <FaCogs className="text-red-500 text-2xl mr-3" />
-              <h3 className="text-xl font-bold">S-<span className="text-red-500">Tech</span> Sales</h3>
+              <FaCogs className="text-orange-500 text-2xl mr-3" />
+              <h3 className="text-xl font-bold">S-<span className="text-orange-500">Tech</span> Sales</h3>
             </div>
             <p className="text-blue-200 mb-4">
               Your trusted partner for precision coupling solutions and industrial components.
@@ -122,23 +122,23 @@ const Footer = () => {
             <ul className="space-y-3">
               <motion.li whileHover="hover" variants={linkVariants}>
                 <a href="#" className="flex items-start text-blue-200 hover:text-white transition-colors">
-                  <FaMapMarkerAlt className="mt-1 mr-3 text-red-400" />
-                  <span>Dattanager Shivanjali lane no 2, Katraj, Pune - 411046</span>
+                  <FaMapMarkerAlt className="mt-1 mr-3 text-orange-400" />
+                  <span>Dattanagar, Katraj, Pune – 411046</span>
                 </a>
               </motion.li>
               <motion.li whileHover="hover" variants={linkVariants}>
                 <a href="mailto:info@stechsales.com" className="flex items-center text-blue-200 hover:text-white transition-colors">
-                  <FaEnvelope className="mr-3 text-red-400" /> info@stechsales.com
+                  <FaEnvelope className="mr-3 text-orange-400" /> info@stechsales.com
                 </a>
               </motion.li>
               <motion.li whileHover="hover" variants={linkVariants}>
                 <a href="tel:+918208269162" className="flex items-center text-blue-200 hover:text-white transition-colors">
-                  <FaPhone className="mr-3 text-red-400" /> +91 8208269162
+                  <FaPhone className="mr-3 text-orange-400" /> +91 8208269162
                 </a>
               </motion.li>
               <motion.li whileHover="hover" variants={linkVariants}>
                 <a href="tel:+919422302342" className="flex items-center text-blue-200 hover:text-white transition-colors">
-                  <FaPhone className="mr-3 text-red-400" /> +91 9422302342
+                  <FaPhone className="mr-3 text-orange-400" /> +91 9422302342
                 </a>
               </motion.li>
             </ul>

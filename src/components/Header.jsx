@@ -99,17 +99,17 @@ const Header = () => {
             whileHover={{ rotate: 15 }}
             transition={{ type: 'spring', stiffness: 300 }}
           >
-            <FaCogs className="text-red-400 text-3xl" />
+            <FaCogs className="text-orange-500 text-3xl" />
           </motion.div>
           <div>
             <motion.h1 
               className="text-xl md:text-2xl font-bold"
               whileHover={{ x: 2 }}
             >
-              S-<span className="text-red-400">Tech</span> Sales
+              S-<span className="text-orange-500">Tech</span> Sales
             </motion.h1>
             <p className="text-xs text-blue-100 opacity-80 group-hover:opacity-100 transition-opacity">
-              Coupling Solutions & Precision Job Work
+              Authorized Dealer for KTR Coupling (India) Pvt. Ltd.
             </p>
           </div>
         </ScrollLink>
@@ -123,14 +123,14 @@ const Header = () => {
                   <Link
                     href={item.href}
                     className={`relative px-4 py-2 font-medium transition-colors duration-300 cursor-pointer 
-                      ${activeLink === item.href ? 'text-red-400' : 'text-white hover:text-red-300'}`}
+                      ${activeLink === item.href ? 'text-orange-500' : 'text-white hover:text-orange-400'}`}
                     onClick={() => setActiveLink(item.href)}
                   >
                     {item.name}
                     {activeLink === item.href && (
                       <motion.span 
                         layoutId="navUnderline"
-                        className="absolute left-0 bottom-0 w-full h-0.5 bg-red-400"
+                        className="absolute left-0 bottom-0 w-full h-0.5 bg-orange-500"
                         transition={{ type: 'spring', bounce: 0.25, duration: 0.5 }}
                       />
                     )}
@@ -142,7 +142,7 @@ const Header = () => {
                     duration={500}
                     offset={-80}
                     className={`relative px-4 py-2 font-medium transition-colors duration-300 cursor-pointer 
-                      ${activeLink === item.href ? 'text-red-400' : 'text-white hover:text-red-300'}`}
+                      ${activeLink === item.href ? 'text-orange-500' : 'text-white hover:text-orange-400'}`}
                     onSetActive={() => setActiveLink(item.href)}
                     spy={true}
                   >
@@ -150,7 +150,7 @@ const Header = () => {
                     {activeLink === item.href && (
                       <motion.span 
                         layoutId="navUnderline"
-                        className="absolute left-0 bottom-0 w-full h-0.5 bg-red-400"
+                        className="absolute left-0 bottom-0 w-full h-0.5 bg-orange-500"
                         transition={{ type: 'spring', bounce: 0.25, duration: 0.5 }}
                       />
                     )}
@@ -171,7 +171,7 @@ const Header = () => {
           whileTap={{ scale: 0.95 }}
         >
           {mobileMenuOpen ? (
-            <FaTimes className="text-red-400" />
+            <FaTimes className="text-orange-500" />
           ) : (
             <FaBars className="text-white" />
           )}
@@ -218,8 +218,8 @@ const Header = () => {
                             href={item.href}
                             className={`flex items-center px-4 py-3 rounded-xl font-medium transition-all duration-300
                               ${activeLink === item.href 
-                                ? 'text-red-400 bg-blue-700/50 shadow-lg' 
-                                : 'text-white hover:text-red-300 hover:bg-blue-700/30'}`}
+                                ? 'text-orange-500 bg-blue-700/50 shadow-lg' 
+                                : 'text-white hover:text-orange-400 hover:bg-blue-700/30'}`}
                             onClick={() => {
                               setMobileMenuOpen(false);
                               setActiveLink(item.href);
@@ -228,7 +228,7 @@ const Header = () => {
                             <span className="flex-1">{item.name}</span>
                             {activeLink === item.href && (
                               <motion.span 
-                                className="w-2 h-2 bg-red-400 rounded-full"
+                                className="w-2 h-2 bg-orange-500 rounded-full"
                                 layoutId="mobileNavIndicator"
                               />
                             )}
@@ -241,8 +241,8 @@ const Header = () => {
                             offset={-80}
                             className={`flex items-center px-4 py-3 rounded-xl font-medium transition-all duration-300
                               ${activeLink === item.href 
-                                ? 'text-red-400 bg-blue-700/50 shadow-lg' 
-                                : 'text-white hover:text-red-300 hover:bg-blue-700/30'}`}
+                                ? 'text-orange-500 bg-blue-700/50 shadow-lg' 
+                                : 'text-white hover:text-orange-400 hover:bg-blue-700/30'}`}
                             onClick={() => {
                               setMobileMenuOpen(false);
                               setActiveLink(item.href);
@@ -253,7 +253,7 @@ const Header = () => {
                             <span className="flex-1">{item.name}</span>
                             {activeLink === item.href && (
                               <motion.span 
-                                className="w-2 h-2 bg-red-400 rounded-full"
+                                className="w-2 h-2 bg-orange-500 rounded-full"
                                 layoutId="mobileNavIndicator"
                               />
                             )}
